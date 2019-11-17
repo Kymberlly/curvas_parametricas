@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            input{
+                width: 40px;
+            }
+
+            #container{
+                display:flex;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div>
+                <canvas width="1000" height="700"></canvas>
+            </div>
+
+            <script type="text/javascript" src="curva.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+            <div>
+                <div>
+                    <div><h3>Ponto 1:</h3></div>
+                    <div>
+                        <label for="pt0x">x</label>
+                        <input type="text" value="" id="pt0x" name="pt0x" onchange="mudaPonto(this, 0, 'x');" />
+
+                        <label for="pt0y">y</label>
+                        <input type="text" value="" id="pt0y" name="pt0y" onchange="mudaPonto(this, 0, 'y');" />
+                    </div>
+                </div>
+
+                <div>
+                    <div><h3>Ponto 2:</h3></div>
+                    <div>
+                        <label for="pt1x">x</label>
+                        <input type="text" value="" id="pt1x" name="pt1x" onchange="mudaPonto(this, 1, 'x');" />
+
+                        <label for="pt1y">y</label>
+                        <input type="text" value="" id="pt1y" name="pt1y" onchange="mudaPonto(this, 1, 'y');" />
+                    </div>
+                </div>
+
+                <div>
+                    <div><h3>Ponto 3:</h3></div>
+                    <div>
+                        <label for="pt2x">x</label>
+                        <input type="text" value="" id="pt2x" name="pt2x" onchange="mudaPonto(this, 2, 'x');" />
+
+                        <label for="pt2y">y</label>
+                        <input type="text" value="" id="pt2y" name="pt2y" onchange="mudaPonto(this, 2, 'y');" />
+                    </div>
+                </div>
+
+                <div>
+                    <div><h3>Ponto 4:</h3></div>
+                    <div>
+                        <label for="pt3x">x</label>
+                        <input type="text" value="" id="pt3x" name="pt3x" onchange="mudaPonto(this, 3, 'x');" />
+
+                        <label for="pt3y">y</label>
+                        <input type="text" value="" id="pt3y" name="pt3y" onchange="mudaPonto(this, 3, 'y');" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </body>
+</html>
