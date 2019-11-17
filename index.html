@@ -2,32 +2,90 @@
 <html>
     <head>
         <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 12px;
+                margin:0;
+                padding:0;
+            }
             input{
                 width: 40px;
+                margin-right: 15px;
+            }
+
+            a{
+                cursor: pointer;
+                background-color:brown;
+                color: white;
+                padding: 7px;
+                border-radius: 5px;
+                float:right
+            }
+
+            b{
+                color:brown;
+                text-decoration: underline;
+            }
+
+            canvas{
+                border:1px solid #999;
             }
 
             #container{
                 display:flex;
             }
+
+            .painel_controle{
+                padding: 0px 20px;
+            }
+
+            .instrucoes{
+                text-align: justify;
+            }
+
+            .instrucoes span{
+                font-weight: bold;
+                font-size: 13px;
+                display: block;
+                margin:20px 0px;
+            }
         </style>
     </head>
     <body>
         <div id="container">
+            
             <div>
-                <canvas width="1000" height="700"></canvas>
+                <canvas width="900" height="630"></canvas>
             </div>
 
             <script type="text/javascript" src="curva.js"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-            <div>
+            <div class="painel_controle">
+                <h1>Curva de Bézier:</h1>
+                <div>
+                    <a onclick="limpaTela();">Limpar tela</a>
+                </div>
+                <div class="instrucoes">
+                        <span>Instruções de uso:</span>
+                        Para a criação da curva, são necessários <b>4 pontos na tela</b>. Para isso, siga as instruções abaixo:
+                        <br /><br />
+                        1º - Clique na área demarcada com o lado esquerdo do mouse, após clicar, irá aparecer
+                        um quadrado vermelho representando o ponto escolhido <br /> (Repita esta ação 4x).
+                        <br /><br />
+                        2º - Após escolher 4 pontos, a curva de Bézier será mostrada na tela.
+    
+                        <span>Para modificar um ponto:</span>
+                        Basta alterar o valor do eixo do ponto escolhido nas <b>caixas de seleção abaixo</b>. Ao alterar o valor,
+                        o ponto será movido e a alteração poderá ser vista na tela.
+                    </div>
                 <div>
                     <div><h3>Ponto 1:</h3></div>
                     <div>
-                        <label for="pt0x">x</label>
+                        <label for="pt0x">X</label>
                         <input type="text" value="" id="pt0x" name="pt0x" onchange="mudaPonto(this, 0, 'x');" />
 
-                        <label for="pt0y">y</label>
+                        <label for="pt0y">Y</label>
                         <input type="text" value="" id="pt0y" name="pt0y" onchange="mudaPonto(this, 0, 'y');" />
                     </div>
                 </div>
@@ -35,10 +93,10 @@
                 <div>
                     <div><h3>Ponto 2:</h3></div>
                     <div>
-                        <label for="pt1x">x</label>
+                        <label for="pt1x">X</label>
                         <input type="text" value="" id="pt1x" name="pt1x" onchange="mudaPonto(this, 1, 'x');" />
 
-                        <label for="pt1y">y</label>
+                        <label for="pt1y">Y</label>
                         <input type="text" value="" id="pt1y" name="pt1y" onchange="mudaPonto(this, 1, 'y');" />
                     </div>
                 </div>
@@ -46,10 +104,10 @@
                 <div>
                     <div><h3>Ponto 3:</h3></div>
                     <div>
-                        <label for="pt2x">x</label>
+                        <label for="pt2x">X</label>
                         <input type="text" value="" id="pt2x" name="pt2x" onchange="mudaPonto(this, 2, 'x');" />
 
-                        <label for="pt2y">y</label>
+                        <label for="pt2y">Y</label>
                         <input type="text" value="" id="pt2y" name="pt2y" onchange="mudaPonto(this, 2, 'y');" />
                     </div>
                 </div>
@@ -57,14 +115,13 @@
                 <div>
                     <div><h3>Ponto 4:</h3></div>
                     <div>
-                        <label for="pt3x">x</label>
+                        <label for="pt3x">X</label>
                         <input type="text" value="" id="pt3x" name="pt3x" onchange="mudaPonto(this, 3, 'x');" />
 
-                        <label for="pt3y">y</label>
+                        <label for="pt3y">Y</label>
                         <input type="text" value="" id="pt3y" name="pt3y" onchange="mudaPonto(this, 3, 'y');" />
                     </div>
                 </div>
-
             </div>
         </div>
 
